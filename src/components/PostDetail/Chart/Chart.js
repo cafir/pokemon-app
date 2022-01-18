@@ -17,39 +17,6 @@ const Chart = ({ allStats }) => {
         A: stat.base_stat,
         fullMark: 150
     }))
-    console.log(dataStat)
-    const data = [
-        {
-          subject: "Math",
-          A: 120,
-          fullMark: 150
-        },
-        {
-          subject: "Chinese",
-          A: 98,
-          fullMark: 150
-        },
-        {
-          subject: "English",
-          A: 86,
-          fullMark: 150
-        },
-        {
-          subject: "Geography",
-          A: 99,
-          fullMark: 150
-        },
-        {
-          subject: "Physics",
-          A: 85,
-          fullMark: 150
-        },
-        {
-          subject: "History",
-          A: 85,
-          fullMark: 150
-        }
-      ];
 
   return (
     <div className="chart">

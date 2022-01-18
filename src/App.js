@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { useDispatch,r } from "react-redux";
-
-import { Container, Grow, Grid} from "@material-ui/core"
-
-import { getAllPokemon } from "./actions/poke-api";
+import { Container, } from "@material-ui/core"
 
 
 
