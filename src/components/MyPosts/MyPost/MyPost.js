@@ -19,7 +19,7 @@ const MyPost = ({ pokemon, dispatch }) => {
             </div>
             <div class="card-footer">
                 <button class="btn" onClick={() => detail()}>Detail</button>
-                <button class="btn btn-outline" onClick={() => dispatch({ type:"REMOVE_POKEMON", name: pokemon.name})}>Contact Seller</button>
+                <button class="btn btn-outline" onClick={() => dispatch({ type:"REMOVE_POKEMON", name: pokemon.name})}>Release</button>
             </div> 
         </div>
     )
