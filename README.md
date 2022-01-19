@@ -1,4 +1,4 @@
-# URl to go to the app
+# URL to go to the app
 
 This is the url if you want to see or catch some pokemon https://pokemon-list-app.vercel.app/ 
 
