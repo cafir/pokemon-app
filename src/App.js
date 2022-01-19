@@ -23,7 +23,7 @@ const App = () => {
                 <Routes>
                     <Route path='/' exact element={ <PokemonList/>}/>
                     <Route path='/pokemon/search' exact element={ <PokemonList/>}/>
-                    <Route path='/detail' exact element={ <PostDetail/>}/>
+                    <Route path='/detail/:id' exact element={ <PostDetail/>}/>
                     <Route path='/mypokemon' exact element={ <MyPokemon/>}/>
                     <Route path='/creator' exact element={ <Creator/>}/>
                 </Routes>

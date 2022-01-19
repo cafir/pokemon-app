@@ -6,7 +6,7 @@ const Picture = ({currentPokemon}) => {
     const navigate = useNavigate();
 
     const detail = () => {
-        navigate("/detail", {state: {obj: currentPokemon}})
+        navigate(`/detail/${currentPokemon.id}`, {state: {obj: currentPokemon}})
     }
     
 

@@ -6,7 +6,7 @@ const MyPost = ({ pokemon, dispatch }) => {
     
     const navigate = useNavigate()
     const detail = () => {
-        navigate("/detail", {state: {obj: pokemon.pokemon}})
+        navigate(`/detail/${pokemon.pokemon.id}` , {state: {obj: pokemon.pokemon}})
     }
 
     console.log(pokemon)

@@ -5,6 +5,7 @@ import Move from "./Move/Move";
 const Moves = ({ allMove }) => {
     
     return(
+        
         <div className="card-scroll">
             <div class="card-grid">
                 {allMove.map(move=> (
