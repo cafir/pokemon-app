@@ -67,7 +67,7 @@ const PostDetail = () => {
                                 aria-labelledby="parent-modal-title"
                                 aria-describedby="parent-modal-description"
                             >
-                                <Box style={{margin: "100px 500px"}}>
+                                <Box style={{margin: "100px 20%"}}>
                                     
                                     {test === 1 ? <AppBar position="static" style={{marginTop: "100px", textAlign:"center", display:"flex", justifyContent:"center"}}><h1>{location.state.obj.forms[0].name} run away!</h1></AppBar> : 
                                     <div>
