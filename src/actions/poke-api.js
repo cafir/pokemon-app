@@ -18,8 +18,8 @@ export const getSearchPokemon = (name) => async (dispatch) => {
     try {
         const data = await api.fetchData()
         
-        const searchData = [data.data.results.find((pokemon) => pokemon.name === name.toLower())];
-
+        const searchData = [data.data.results.find((pokemon) => pokemon.name === name.toLowerCase())];
+        
         dispatch({ type: "SEARCH_DATA", payload: searchData });
         
     } catch (error) {
