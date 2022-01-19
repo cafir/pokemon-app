@@ -1,3 +1,7 @@
+# URl to go to the app
+
+This is the url if you want to see or catch some pokemon https://pokemon-list-app.vercel.app/ 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
