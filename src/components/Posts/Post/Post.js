@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import axios from "axios";
-
+import { localStorageReducer } from "../../../reducers/localStorageReducer";
 import { useNavigate } from "react-router-dom";
 
 const Post = ({ pokemon, setCurrentPokemon }) => {
-    const [currentObj, setCurrentObj] = useState(null);
+    const [currentObj, setCurrentObj] = useState('');
     const navigate = useNavigate()
 
     const fetchData = async () => {
@@ -16,6 +16,15 @@ const Post = ({ pokemon, setCurrentPokemon }) => {
                 console.log(err.message)
             })
     }
+
+    const [myPokemon, dispatch] = useReducer(localStorageReducer, [], () => {
+        const localData = localStorage.getItem('myPokemon');
+        return localData ? JSON.parse(localData) : [];
+    });
+    
+    const myPokemonID = myPokemon.map(p => p.pokemon.id);
+
+    const ownedPokemon = myPokemonID.filter(p => p === currentObj.id).length
 
     const handleClick = () => {
         setCurrentPokemon(currentObj)
@@ -33,6 +42,9 @@ const Post = ({ pokemon, setCurrentPokemon }) => {
         onClick={() => handleClick()}>
             <div class="card-body">
             <img src={currentObj.sprites.versions["generation-viii"].icons.front_default}/><div className="name">{pokemon.name}</div>
+            </div>
+            <div class="card-body">
+                <div className="name">owned: {ownedPokemon}</div>
             </div>
         </div>
     ))

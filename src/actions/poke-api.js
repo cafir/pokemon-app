@@ -4,8 +4,6 @@ import * as api from "../api"
 export const getAllPokemon = () => async(dispatch) => {
     try {
         const data = await api.fetchData()
-
-        console.log(data.data.results)
         
         dispatch({ type: "FETCH_DATA", payload: data.data.results }); 
         

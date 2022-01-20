@@ -1,6 +1,7 @@
 import React, {useReducer, useEffect, useState} from "react";
+import axios from "axios";
 
-import {  useLocation } from "react-router-dom";
+import {  useLocation, useParams } from "react-router-dom";
 
 import { Container, Grow, Grid, TextField, AppBar, Button, Modal, Box} from "@material-ui/core"
 
@@ -15,14 +16,15 @@ import Chart from "./Chart/Chart";
 const test = Math.floor((Math.random() * 2) + 1);
 
 const PostDetail = () => {
-    const location = useLocation();
-    console.log(location.state.obj)
+    let location = useLocation();
+
     const [name, setName] = useState('')
-    const [pokemon, setPokemon] = useState(location.state.obj)
+    let [pokemon, setPokemon] = useState(location.state.obj)
     const [myPokemon, dispatch] = useReducer(localStorageReducer, [], () => {
         const localData = localStorage.getItem('myPokemon');
         return localData ? JSON.parse(localData) : [];
     });
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -57,7 +59,7 @@ const PostDetail = () => {
                         <div className="card card-shadow" style={{display: "flex", textAlign: "center", justifyContent:"center", marginTop: "20px"}}>
                             <p>Info</p>
                         </div>
-                        <Info pokemon={location.state.obj}/>
+                        <Info pokemon={pokemon}/>
                         <AppBar position="static" color='inherit'>
 
                             <Button onClick={handleOpen}>Try Catch!</Button>
@@ -69,9 +71,9 @@ const PostDetail = () => {
                             >
                                 <Box style={{margin: "100px 20%"}}>
                                     
-                                    {test === 1 ? <AppBar position="static" style={{marginTop: "100px", textAlign:"center", display:"flex", justifyContent:"center"}}><h1>{location.state.obj.forms[0].name} run away!</h1></AppBar> : 
+                                    {test === 1 ? <AppBar position="static" style={{marginTop: "100px", textAlign:"center", display:"flex", justifyContent:"center"}}><h1>{pokemon.forms[0].name} run away!</h1></AppBar> : 
                                     <div>
-                                    <Info pokemon={location.state.obj}/>
+                                    <Info pokemon={pokemon}/>
                                     <AppBar  position="static" color='inherit'>
                                         <TextField 
                                             name="search" 
@@ -94,13 +96,13 @@ const PostDetail = () => {
                     <div className="card card-shadow" style={{display: "flex", textAlign: "center", justifyContent:"center", marginTop: "20px"}}>
                         <p>Status Chart</p>
                     </div>
-                        <Chart allStats={location.state.obj.stats}/>
+                        <Chart allStats={pokemon.stats}/>
                     </Grid>
                     <Grid item xs={12} sm={4} >
                     <div className="card card-shadow" style={{display: "flex", textAlign: "center", justifyContent:"center", marginTop: "20px"}}>
                         <p>Move</p>
                     </div>
-                        <Moves allMove={location.state.obj.moves}/>
+                        <Moves allMove={pokemon.moves}/>
                     </Grid>
                 </Grid>
             </Container>
