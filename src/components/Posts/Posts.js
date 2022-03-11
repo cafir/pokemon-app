@@ -11,7 +11,7 @@ const Posts = ({ setCurrentPokemon }) => {
     if (allpokemon[0] === undefined) {
         return (
         <div className="card" style={{display: "flex", textAlign: "center", justifyContent:"center", marginTop: "20px"}}>
-            <h1>NO DATA ABOUT THAT POKEMON</h1>
+            <h1>NO DATA ABOUT THIS POKEMON</h1>
         </div>
         )
     }
